@@ -1,0 +1,707 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+      /* Add color variables */
+      :root {
+        --yellow-background: #feaf00;
+        --yellow-font: #feaf00;
+        --white-font: #fff8ef;
+        --dark-background: #000000;
+        --dark-font: #1c1624;
+
+        --use-case-card-width: 200px;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        font-family: Barlow, sans-serif;
+      }
+      h2.subtitle {
+        font-size: 72px;
+        font-weight: 400;
+        letter-spacing: 2px;
+      }
+      .center-headers {
+        text-align: center;
+        width: 100%;
+      }
+      .vertical-center {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .hero-img {
+        width: 600px;
+      }
+
+      .contact-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 36px;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: rgb(242, 178, 62);
+      }
+
+      a.button {
+        background-color: var(--yellow-background);
+        color: var(--dark-font);
+        padding-left: 32px;
+        padding-right: 32px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .nav-header {
+        display: flex;
+        padding: 31px 122px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hero-container {
+        display: flex;
+        height: 566px;
+        padding: 0px 122px 30px 122px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        flex-shrink: 0;
+      }
+
+      h1.jumbo-title {
+        margin: 0;
+        font-size: 103px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 115px; /* 111.111% */
+      }
+
+      h1.jumbo-title.yellow {
+        color: var(--yellow-font);
+      }
+      h1.jumbo-title.white {
+        color: var(--white-font);
+      }
+
+      .jumbo-subtitle-container {
+        width: 760px;
+        flex-shrink: 0;
+      }
+
+      .jumbo-subtitle {
+        color: var(--white-font);
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 55px; /* 108% */
+      }
+
+      .section {
+        display: flex;
+        justify-content: center;
+        /* background-color: var(--dark-background); */
+        color: var(--white-font);
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
+
+      .feature {
+        flex: 1; /* Each feature takes equal width */
+        display: inline-flex;
+        align-items: center;
+        gap: 16.256px;
+        min-height: 130px;
+      }
+
+      .feature-texts {
+        display: flex;
+        width: 290px;
+        padding: 0px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .icon {
+        font-size: 2rem; /* Adjust icon size as needed */
+        margin-bottom: 10px;
+      }
+      .features {
+        display: flex;
+        padding: 30px 122px;
+        justify-content: center;
+        align-items: center;
+        gap: 105px;
+      }
+
+      .feature-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .feature-circle {
+        width: 77px;
+        height: 77px;
+        background-image: url("assets/img/background-gradient-circle.svg");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        stroke-width: 0.254px;
+        stroke: #FFF;
+      }
+
+      .feature-title {
+        margin: 0;
+        color: var(--white-font);
+        font-size: 21;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        align-self: stretch;
+
+        margin-bottom: 5px;
+      }
+
+      .feature-subtitle {
+        margin: 0;
+        color: var(--yellow-font);
+        font-weight: bold;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      h2 {
+        color: var(--yellow-font);
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .battery-img {
+        width: 572px;
+        height: 372px;
+        flex-shrink: 0;
+      }
+      .battery-img-background {
+        background: url("assets/img/yellow-blur-background.svg");
+        background-position: left;
+        background-size: cover;
+      }
+
+      .double-column-outer {
+        display: flex;
+        /* width: 1440px; */
+        padding: 30px 122px;
+        justify-content: center;
+        align-items: center;
+        gap: 105px;
+      }
+
+      .centered-notice-container {
+        display: flex;
+        /* width: 1440px; */
+        /* height: 165px; */
+        padding: 30px 122px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .centered-notice-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .centered-notice-title {
+        text-align: center;
+        margin: 0;
+      }
+      .centered-notice-subtitle {
+        color: var(--white-font);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px; /* 144.444% */
+        /* Here to make it reflow into two lines */
+        max-width: 550px;
+      }
+
+      .use-cases-outer-container {
+        display: flex;
+        padding: 30px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+      }
+
+      .use-cases-inner-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 27px;
+        flex-shrink: 0;
+      }
+
+      .use-case-container {
+        display: flex;
+        padding: 12px 12px 30px 10px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .use-case-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: var(--use-case-card-width);
+      }
+      .use-case-card-inner {
+        display: flex;
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 9px;
+
+        border-radius: 22.5px;
+        border: 0.25px solid var(--yellow-background);
+        background: linear-gradient(
+          65deg,
+          rgba(255, 255, 255, 0.16) 4%,
+          rgba(255, 255, 255, 0.06) 40%,
+          rgba(255, 255, 255, 0.16) 82%
+        );
+
+        /* Shadow/Light */
+        box-shadow: 0px 24px 48px -12px rgba(0, 0, 0, 0.1);
+      }
+
+      .use-card-img {
+        width: var(--use-case-card-width);
+        height: 132px;
+        border-radius: 22.5px 22.5px 19px 19px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: grayscale(100%);
+        /* TODO: use proper values */
+        /* background: lightgray 50% / cover no-repeat, #d9d9d9; */
+        box-shadow: 0px 3.82px 3.82px 0px rgba(0, 0, 0, 0.4);
+      }
+
+      .use-card-img.auto {
+        background-image: url("assets/img/use-case-1-tesla-in-highway.png");
+      }
+
+      .use-card-img.storage {
+        background-image: url("assets/img/use-case-2-storage.png");
+      }
+      .use-card-img.mobility {
+        background-image: url("assets/img/use-case-3-mobility.png");
+      }
+      .use-card-img.aero {
+        background-image: url("assets/img/use-case-4-aero.png");
+      }
+      .use-card-img.consumer {
+        background-image: url("assets/img/use-case-5-consumer.png");
+      }
+
+      .use-card-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        width: 90%;
+      }
+
+      h4.use-card-title {
+        margin: 0;
+        /* TODO: extract variable */
+        color: #fffcfc;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      p.use-card-subtitle {
+        display: none;
+        margin: 0;
+
+        /* TODO: extract variable */
+        color: #fffcfc;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      .plan-outer-container {
+        display: inline-flex;
+        padding: 30px 122px;
+        align-items: center;
+        gap: 87px;
+      }
+
+      .plan-image-container {
+        display: flex;
+        width: 710px;
+        height: 530px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 36px;
+
+        overflow: hidden; /* Ensures no part of the GIF spills over */
+
+        border: solid;
+        border-width: 1px;
+        border-color: var(--yellow-background);
+      }
+
+      .display-none {
+        display: none;
+      }
+
+      .drone-gif {
+        /* width: 710px; */
+        /* height: 530px; */
+        /* border-radius: 36px; */
+        width: 100%;  /* Makes the image fully occupy the container width */
+        height: 100%; /* Makes the image fully occupy the container height */
+        object-fit: contain; /* Ensures the GIF's aspect ratio is maintained */
+      }
+
+
+
+      .plan-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      h3.plan-title {
+        color: var(--yellow-font);
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 49px;
+      }
+
+      .plan-text {
+        color: var(--white-font);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 25px;
+      }
+
+      .centered-notice-container {
+        display: flex;
+        padding: 30px 122px;
+        align-items: center;
+        gap: -108px;
+      }
+
+      .centered-notice-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+
+      h2.centered-notice-title.yellow {
+        color: var(--yellow-font);
+      }
+      h2.centered-notice-title.white {
+        color: var(--white-font);
+      }
+
+      .footer {
+        display: flex;
+        padding: 30px 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .hero-outer-container {
+        width: 100%;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1) 100%), url("assets/img/hero-background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* Have the image cover the whole width of the page  */
+
+      }
+
+      .footer-background {
+        padding-top: 200px;
+        position: relative;
+        z-index: 1;
+        background-color: none;
+      }
+      .footer-background::before {
+        /* background-color: var(--dark-background); */
+        background: url("assets/img/footer-background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        mix-blend-mode: plus-lighter;
+        content: "";
+        opacity: 0.7;
+
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+      }
+
+      .wordmark {
+        width: 130px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="hero-outer-container">
+      <div class="nav-header">
+        <div class="logo-container">
+          <img class="wordmark" src="assets/img/Ouros-Yellow-Wordmark.svg"></img>
+        </div>
+        <a class="button" href="mailto: contact@ouros.energy" class="contact"
+          >Contact us</a
+        >
+      </div>
+      <div class="hero-container">
+        <div class="title-container">
+          <h1 class="jumbo-title white">Powering the</h1>
+          <h1 class="jumbo-title yellow">Electric Future:</h1>
+          <div class="jumbo-subtitle-container">
+            <p class="jumbo-subtitle">
+              Welcome to the next generation of batteries.
+            </p>
+          </div>
+        </div>
+        <div class="get-in-touch-container">
+          <a class="button" href="mailto: contact@ouros.energy" class="contact"
+            >Get in touch</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="double-column-outer">
+        <div>
+          <h2>
+            What if batteries provided 10x higher energy for 1% the cost of
+            today's lithium-ion?
+          </h2>
+        </div>
+        <div class="battery-img-background" >
+          <img class="battery-img" src="assets/img/battery.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="features">
+        <div class="feature">
+          <div class="feature-circle">
+            <img class="feature-icon" src="assets/img/electric-car-icon.svg"></img>
+          </div>
+          <div class="feature-texts">
+            <h3 class="feature-title">Coast-to-coast on a single charge</h3>
+            <p class="feature-subtitle">3,000 mi range for electric vehicles</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-circle">
+            <img class="feature-icon" src="assets/img/energy-icon.svg"></img>
+          </div>
+          <div class="feature-texts">
+            <h3 class="feature-title">Democratized power</h3>
+            <p class="feature-subtitle">
+              Energy too cheap to meter becomes accessible to all
+            </p>
+ 
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-circle">
+            <img class="feature-icon" src="assets/img/turbine-icon.svg"></img>
+          </div>
+          <div class="feature-texts">
+            <h3 class="feature-title">Regional mobility solved</h3>
+            <p class="feature-subtitle">1,000 mi range for eVTOLs and aircraft</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <div class="centered-notice-container">
+        <div class="centered-notice-inner">
+          <h2 class="centered-notice-title">One battery for all markets</h2>
+          <p class="centered-notice-subtitle">
+            The highest returns and best leverage from aerospace, the power to
+            make systemic change everywhere.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="use-cases-outer-container">
+        <div class="use-cases-inner-container">
+          <div class="use-case-container">
+            <div class="use-case-card">
+              <div class="use-case-card-inner">
+                <div class="use-card-img auto"></div>
+                <div class="use-card-text-container">
+                  <h4 class="use-card-title">Auto</h4>
+                  <p class="use-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="use-case-container">
+            <div class="use-case-card">
+              <div class="use-case-card-inner">
+                <div class="use-card-img storage"></div>
+                <div class="use-card-text-container">
+                  <h4 class="use-card-title">Storage</h4>
+                  <p class="use-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="use-case-container">
+            <div class="use-case-card">
+              <div class="use-case-card-inner">
+                <div class="use-card-img mobility"></div>
+                <div class="use-card-text-container">
+                  <h4 class="use-card-title">Mobility/SLI</h4>
+                  <p class="use-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="use-case-container">
+            <div class="use-case-card">
+              <div class="use-case-card-inner">
+                <div class="use-card-img aero"></div>
+                <div class="use-card-text-container">
+                  <h4 class="use-card-title">Aereo</h4>
+                  <p class="use-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="use-case-container">
+            <div class="use-case-card">
+              <div class="use-case-card-inner">
+                <div class="use-card-img consumer"></div>
+                <div class="use-card-text-container">
+                  <h4 class="use-card-title">Consumer</h4>
+                  <p class="use-card-subtitle">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section display-none">
+      <div class="plan-outer-container">
+        <div class="plan-image-container">
+          <img class="drone-gif" src="assets/img/drone.gif" alt="Drone flying">
+        </div>
+        <div class="plan-text-container">
+          <h3 class="plan-title">Improving battery energy density & cost</h3>
+          <p class="plan-text">
+            Ouros introduces a novel cathode material that boasts the highest
+            capacity ever recorded, revolutionizing the landscape of energy
+            storage. By utilizing a denser cathode material, it enables the
+            thickening of each anode layer, resulting in enhanced capacity per
+            layer while simultaneously reducing inactive mass. It offers
+            significant cost advantages compared to existing alternatives.
+            Additionally, Ouros streamlines cathode manufacturing processes by
+            eliminating 80% of the associated steps, promising increased
+            efficiency and scalability in production.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-background">
+        <div class="section">
+          <div class="centered-notice-container">
+            <div class="centered-notice-inner">
+              <h2 class="centered-notice-title white">Ready to connect?</h2>
+              <h2 class="centered-notice-title yellow">React out and let us know!</p>
+            </div>
+            <a class="button" href="mailto: contact@ouros.energy" class="contact">Contact us</a>
+          </div>
+        </div>
+    
+        <div class="footer">
+          <div class="logo-container">
+            <img class="wordmark" src="assets/img/Ouros-Yellow-Wordmark.svg"></img>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
